@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>木材科学与工程专业英语学习助手</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c5530;
+            --secondary-color: #73956f;
+            --accent-color: #d4af37;
+            --light-color: #f8f5e6;
+            --dark-color: #1a2c1e;
+            --card-bg: #ffffff;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #f8f5e6 0%, #e8f4ea 100%);
+            color: var(--dark-color);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .tabs {
+            display: flex;
+            background-color: var(--light-color);
+            padding: 5px;
+            margin: 20px;
+            border-radius: 12px;
+        }
+        
+        .tab {
+            flex: 1;
+            padding: 15px 10px;
+            text-align: center;
+            background: none;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark-color);
+            cursor: pointer;
+            border-radius: 10px;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tab.active {
+            background-color: white;
+            color: var(--primary-color);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        .tab i {
+            font-size: 18px;
+        }
+        
+        .content {
+            padding: 0 20px 30px;
+        }
+        
+        .mode-content {
+            display: none;
+        }
+        
+        .mode-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Flashcard Styles */
+        .card-container {
+            perspective: 1500px;
+            height: 320px;
+            margin: 20px 0 30px;
+            cursor: pointer;
+        }
+        
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: var(--radius);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: var(--radius);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+            overflow: hidden;
+        }
+        
+        .card-front {
+            background: linear-gradient(135deg, #f8f5e6 0%, #ffffff 100%);
+            border: 2px solid var(--secondary-color);
+        }
+        
+        .card-back {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+        
+        .card-label {
+            position: absolute;
+            top: 15px;
+            left: 20px;
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 600;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+        
+        .card-back .card-label {
+            color: white;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .card-text {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            line-height: 1.4;
+            max-width: 100%;
+            word-break: break-word;
+        }
+        
+        .card-hint {
+            position: absolute;
+            bottom: 20px;
+            font-size: 14px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .card-back .card-hint {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 14px 28px;
+            border-radius: 50px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--dark-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn-secondary {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e8e4d5;
+            transform: translateY(-3px);
+        }
+        
+        .progress-container {
+            margin-top: 25px;
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--radius);
+        }
+        
+        .progress-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .progress-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            width: 0%;
+            transition: width 0.5s ease;
+            border-radius: 5px;
+        }
+        
+        /* Quiz Styles */
+        .quiz-container {
+            padding: 20px 0;
+        }
+        
+        .quiz-question {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            color: var(--dark-color);
+            line-height: 1.4;
+            padding: 20px;
+            background-color: var(--light-color);
+            border-radius: var(--radius);
+        }
+        
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        @media (max-width: 600px) {
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .option-btn {
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: var(--radius);
+            background-color: white;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            color: var(--dark-color);
+        }
+        
+        .option-btn:hover:not(.correct):not(.wrong) {
+            border-color: var(--secondary-color);
+            background-color: rgba(115, 149, 111, 0.05);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .option-btn.correct {
+            background-color: #4caf50;
+            color: white;
+            border-color: #4caf50;
+        }
+        
+        .option-btn.wrong {
+            background-color: #f44336;
+            color: white;
+            border-color: #f44336;
+        }
+        
+        .quiz-feedback {
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+            padding: 15px;
+            border-radius: var(--radius);
+            margin-bottom: 20px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .correct-feedback {
+            background-color: rgba(76, 175, 80, 0.1);
+            color: #2e7d32;
+        }
+        
+        .wrong-feedback {
+            background-color: rgba(244, 67, 54, 0.1);
+            color: #c62828;
+        }
+        
+        .quiz-stats {
+            display: flex;
+            justify-content: space-between;
+            background-color: var(--light-color);
+            padding: 15px 20px;
+            border-radius: var(--radius);
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .stat-value {
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .flip-icon {
+            position: absolute;
+            bottom: 15px;
+            right: 20px;
+            color: var(--primary-color);
+            font-size: 20px;
+        }
+        
+        .card-back .flip-icon {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1><i class="fas fa-tree"></i> 木材科学与工程专业英语</h1>
+        <p>掌握专业词汇，提升学术英语能力 | 94个核心词汇与术语</p>
+    </div>
+    
+    <div class="tabs">
+        <button class="tab active" data-mode="flashcard">
+            <i class="fas fa-layer-group"></i> 单词卡片
+        </button>
+        <button class="tab" data-mode="quiz">
+            <i class="fas fa-question-circle"></i> 多选题挑战
+        </button>
+    </div>
+    
+    <div class="content">
+        <!-- 单词卡片模式 -->
+        <div id="flashcard-mode" class="mode-content active">
+            <div class="card-container" id="card-container">
+                <div class="card" id="card">
+                    <div class="card-face card-front">
+                        <div class="card-label">中文</div>
+                        <div class="card-text" id="front-text">点击卡片开始学习</div>
+                        <div class="card-hint"><i class="fas fa-hand-point-up"></i> 点击卡片查看英文释义</div>
+                        <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
+                    </div>
+                    <div class="card-face card-back">
+                        <div class="card-label">英文</div>
+                        <div class="card-text" id="back-text">Click to Start</div>
+                        <div class="card-hint"><i class="fas fa-hand-point-up"></i> 点击卡片返回中文</div>
+                        <div class="flip-icon"><i class="fas fa-sync-alt"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button class="btn btn-secondary" id="prev-btn">
+                    <i class="fas fa-arrow-left"></i> 上一个
+                </button>
+                <button class="btn btn-primary" id="next-btn">
+                    下一个 <i class="fas fa-arrow-right"></i>
+                </button>
+                <button class="btn btn-secondary" id="random-btn">
+                    <i class="fas fa-random"></i> 随机单词
+                </button>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-info">
+                    <span id="card-counter">0 / 94</span>
+                    <span id="card-percentage">0%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 测验模式 -->
+        <div id="quiz-mode" class="mode-content">
+            <div class="quiz-container">
+                <div class="quiz-question" id="quiz-question">
+                    问题加载中...
+                </div>
+                
+                <div class="options-grid" id="options">
+                    <!-- 选项将通过JavaScript动态生成 -->
+                </div>
+                
+                <div class="quiz-feedback" id="quiz-feedback">
+                    请选择一个答案
+                </div>
+                
+                <div class="controls">
+                    <button class="btn btn-primary" id="next-question-btn">
+                        下一题 <i class="fas fa-forward"></i>
+                    </button>
+                    <button class="btn btn-secondary" id="reset-quiz-btn">
+                        <i class="fas fa-redo"></i> 重新开始
+                    </button>
+                </div>
+                
+                <div class="quiz-stats">
+                    <div class="stat">
+                        <div class="stat-value" id="total-questions">0</div>
+                        <div class="stat-label">总题数</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="correct-answers">0</div>
+                        <div class="stat-label">答对</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="incorrect-answers">0</div>
+                        <div class="stat-label">答错</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value" id="success-rate">0%</div>
+                        <div class="stat-label">正确率</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>木材科学与工程专业英语学习助手 | 数据来源: 专业词汇表 | 共收录94个词汇</p>
+    </div>
+</div>
+
+<script>
+    const vocabulary = [
+        ["胶黏剂", "Adhesive"], ["胶合板", "Plywood"], ["刨花板", "Particleboard"], ["纤维板", "Fiberboard"], ["木材", "Wood"],
+        ["应力", "Stress"], ["胶结", "Bonding"], ["干燥窑", "Drying Kiln"], ["窑干", "Kiln Drying"], ["气干", "Air Drying"],
+        ["干球温度计", "Dry-Bulb Thermometer"], ["湿球温度计", "Wet-Bulb Thermometer"], ["相对湿度", "Relative Humidity"], ["干燥基准", "Drying Schedule"], ["含水率", "Moisture Content"],
+        ["纤维饱和点", "Fiber Saturation Point (FSP)"], ["收缩", "Shrinkage"], ["膨胀", "Swelling"], ["自由水", "Free Water"], ["结合水", "Bound Water"],
+        ["细胞腔", "Cell Lumen"], ["细胞壁", "Cell Wall"], ["抽提物", "Extractives"], ["木材尺寸", "Wood Dimension"], ["尺寸变化", "Dimensional Change"],
+        ["开裂", "Checking"], ["剪裂", "Splitting"], ["翘曲", "Warping"], ["变形", "Deformation"], ["纵向", "Longitudinal Direction"],
+        ["横向", "Transverse Direction"], ["幼龄材", "Juvenile Wood"], ["干缩", "Drying Shrinkage"], ["弦向", "Tangential Direction"], ["干燥缺陷", "Drying Defect"],
+        ["尺寸稳定性", "Dimensional Stability"], ["径向", "Radial Direction"], ["木材的抗拉强度", "Tensile Strength of Wood"], ["刚性", "Rigidity"], ["扭曲", "Distortion"],
+        ["年轮", "Annual Ring"], ["生长轮", "Growth Ring"], ["弦向收缩", "Tangential Shrinkage"], ["径向收缩", "Radial Shrinkage"], ["纤维素", "Cellulose"],
+        ["半纤维素", "Hemicellulose"], ["木质素", "Lignin"], ["木纤维", "Wood Fiber"], ["木材的主要成分", "Main Components of Wood"], ["次要成分", "Minor Components"],
+        ["大分子量", "High Molecular Weight"], ["葡萄糖单元", "Glucose Unit"], ["软材", "Softwood"], ["硬材", "Hardwood"], ["边材", "Sapwood"],
+        ["心材", "Heartwood"], ["早材", "Earlywood"], ["晚材", "Latewood"], ["树皮", "Bark"], ["细胞", "Cell"],
+        ["导管", "Vessel"], ["管胞", "Tracheid"], ["木射线", "Wood Ray"], ["管孔", "Pore"], ["树脂", "Resin"],
+        ["纹孔", "Pit"], ["木材劣化", "Wood Degradation"], ["木材老化", "Wood Aging"], ["腐朽", "Decay"], ["抗腐朽", "Decay Resistance"],
+        ["防腐剂", "Preservative"], ["水基防腐剂", "Water-Based Preservative"], ["油基防腐剂", "Oil-Based Preservative"], ["腐朽菌", "Decay Fungus"], ["有害昆虫", "Harmful Insect"],
+        ["海生钻孔动物", "Marine Boring Organism"], ["渗透", "Penetration"], ["浸渍", "Impregnation"], ["防腐", "Preservation"], ["煤焦油/克里苏油", "Coal Tar / Creosote Oil"],
+        ["阻燃剂", "Fire Retardant"], ["聚合物", "Polymer"], ["线性聚合物", "Linear Polymer"], ["热塑性", "Thermoplastic"], ["热固性", "Thermosetting"],
+        ["木材的燃烧", "Combustion of Wood"], ["剂留存率/保留量", "Retention Rate of Agent"], ["渗透深度", "Penetration Depth"], ["木结构", "Wood Structure"], ["贴面", "Veneering"],
+        ["封边", "Edge Banding"], ["刨片机", "Flaker"], ["热压", "Hot Pressing"], ["贮存期", "Storage Period"]
+    ];
+
+    // 应用状态管理
+    const appState = {
+        currentCardIndex: 0,
+        isCardFlipped: false,
+        quizStats: {
+            total: 0,
+            correct: 0,
+            incorrect: 0
+        },
+        currentQuizQuestion: null,
+        isQuizAnswered: false
+    };
+
+    // DOM元素
+    const card = document.getElementById('card');
+    const frontText = document.getElementById('front-text');
+    const backText = document.getElementById('back-text');
+    const cardCounter = document.getElementById('card-counter');
+    const cardPercentage = document.getElementById('card-percentage');
+    const progressFill = document.getElementById('progress-fill');
+    
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const randomBtn = document.getElementById('random-btn');
+    
+    const quizQuestion = document.getElementById('quiz-question');
+    const optionsContainer = document.getElementById('options');
+    const quizFeedback = document.getElementById('quiz-feedback');
+    const nextQuestionBtn = document.getElementById('next-question-btn');
+    const resetQuizBtn = document.getElementById('reset-quiz-btn');
+    
+    const totalQuestionsEl = document.getElementById('total-questions');
+    const correctAnswersEl = document.getElementById('correct-answers');
+    const incorrectAnswersEl = document.getElementById('incorrect-answers');
+    const successRateEl = document.getElementById('success-rate');
+    
+    const tabs = document.querySelectorAll('.tab');
+    const modeContents = document.querySelectorAll('.mode-content');
+
+    // 初始化
+    function init() {
+        updateCard();
+        setupEventListeners();
+        setupQuiz();
+    }
+
+    // 设置事件监听器
+    function setupEventListeners() {
+        // 卡片点击翻转
+        card.addEventListener('click', toggleCardFlip);
+        
+        // 卡片模式导航
+        prevBtn.addEventListener('click', showPrevCard);
+        nextBtn.addEventListener('click', showNextCard);
+        randomBtn.addEventListener('click', showRandomCard);
+        
+        // 选项卡切换
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const mode = tab.dataset.mode;
+                showMode(mode);
+            });
+        });
+        
+        // 测验模式按钮
+        nextQuestionBtn.addEventListener('click', setupQuiz);
+        resetQuizBtn.addEventListener('click', resetQuiz);
+    }
+
+    // 显示指定模式
+    function showMode(mode) {
+        // 更新选项卡状态
+        tabs.forEach(tab => {
+            if (tab.dataset.mode === mode) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+        
+        // 更新内容显示
+        modeContents.forEach(content => {
+            if (content.id === `${mode}-mode`) {
+                content.classList.add('active');
+            } else {
+                content.classList.remove('active');
+            }
+        });
+        
+        // 如果切换到测验模式且当前没有活动的问题，设置一个
+        if (mode === 'quiz' && !appState.currentQuizQuestion) {
+            setupQuiz();
+        }
+    }
+
+    // 卡片功能
+    function toggleCardFlip() {
+        appState.isCardFlipped = !appState.isCardFlipped;
+        if (appState.isCardFlipped) {
+            card.classList.add('flipped');
+        } else {
+            card.classList.remove('flipped');
+        }
+    }
+
+    function updateCard() {
+        const currentWord = vocabulary[appState.currentCardIndex];
+        frontText.textContent = currentWord[0];
+        backText.textContent = currentWord[1];
+        
+        // 更新进度
+        const progress = ((appState.currentCardIndex + 1) / vocabulary.length) * 100;
+        cardCounter.textContent = `${appState.currentCardIndex + 1} / ${vocabulary.length}`;
+        cardPercentage.textContent = `${Math.round(progress)}%`;
+        progressFill.style.width = `${progress}%`;
+        
+        // 确保卡片正面朝上
+        card.classList.remove('flipped');
+        appState.isCardFlipped = false;
+    }
+
+    function showPrevCard() {
+        appState.currentCardIndex = (appState.currentCardIndex - 1 + vocabulary.length) % vocabulary.length;
+        updateCard();
+    }
+
+    function showNextCard() {
+        appState.currentCardIndex = (appState.currentCardIndex + 1) % vocabulary.length;
+        updateCard();
+    }
+
+    function showRandomCard() {
+        const oldIndex = appState.currentCardIndex;
+        let newIndex;
+        
+        // 确保随机选择一个不同的单词
+        do {
+            newIndex = Math.floor(Math.random() * vocabulary.length);
+        } while (newIndex === oldIndex && vocabulary.length > 1);
+        
+        appState.currentCardIndex = newIndex;
+        updateCard();
+    }
+
+    // 测验功能
+    function setupQuiz() {
+        // 重置反馈状态
+        appState.isQuizAnswered = false;
+        quizFeedback.textContent = "请选择一个答案";
+        quizFeedback.className = "quiz-feedback";
+        
+        // 选择一个随机单词作为正确答案
+        const correctIdx = Math.floor(Math.random() * vocabulary.length);
+        const correctWord = vocabulary[correctIdx];
+        appState.currentQuizQuestion = correctWord;
+        
+        // 创建选项（1个正确答案 + 3个随机错误答案）
+        const options = [correctWord[1]];
+        
+        while (options.length < 4) {
+            const randomWord = vocabulary[Math.floor(Math.random() * vocabulary.length)][1];
+            if (!options.includes(randomWord)) {
+                options.push(randomWord);
+            }
+        }
+        
+        // 随机排序选项
+        shuffleArray(options);
+        
+        // 更新问题文本
+        quizQuestion.textContent = `"${correctWord[0]}" 的英文是？`;
+        
+        // 生成选项按钮
+        optionsContainer.innerHTML = '';
+        options.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'option-btn';
+            button.textContent = option;
+            button.addEventListener('click', () => checkAnswer(option, correctWord[1]));
+            optionsContainer.appendChild(button);
+        });
+        
+        // 更新下一题按钮文本
+        nextQuestionBtn.textContent = "下一题";
+        nextQuestionBtn.innerHTML = '下一题 <i class="fas fa-forward"></i>';
+    }
+
+    function checkAnswer(selectedAnswer, correctAnswer) {
+        if (appState.isQuizAnswered) return;
+        
+        appState.isQuizAnswered = true;
+        appState.quizStats.total++;
+        
+        // 获取所有选项按钮
+        const optionButtons = document.querySelectorAll('.option-btn');
+        
+        // 标记正确和错误的答案
+        optionButtons.forEach(button => {
+            if (button.textContent === correctAnswer) {
+                button.classList.add('correct');
+            }
+            
+            if (button.textContent === selectedAnswer && selectedAnswer !== correctAnswer) {
+                button.classList.add('wrong');
+            }
+            
+            // 禁用所有按钮
+            button.disabled = true;
+        });
+        
+        // 显示反馈
+        if (selectedAnswer === correctAnswer) {
+            quizFeedback.textContent = "✓ 回答正确！太棒了！";
+            quizFeedback.className = "quiz-feedback correct-feedback";
+            appState.quizStats.correct++;
+        } else {
+            quizFeedback.textContent = `✗ 回答错误。正确答案是: ${correctAnswer}`;
+            quizFeedback.className = "quiz-feedback wrong-feedback";
+            appState.quizStats.incorrect++;
+        }
+        
+        // 更新统计信息
+        updateQuizStats();
+    }
+
+    function updateQuizStats() {
+        totalQuestionsEl.textContent = appState.quizStats.total;
+        correctAnswersEl.textContent = appState.quizStats.correct;
+        incorrectAnswersEl.textContent = appState.quizStats.incorrect;
+        
+        const successRate = appState.quizStats.total > 0 
+            ? Math.round((appState.quizStats.correct / appState.quizStats.total) * 100) 
+            : 0;
+        successRateEl.textContent = `${successRate}%`;
+    }
+
+    function resetQuiz() {
+        appState.quizStats = { total: 0, correct: 0, incorrect: 0 };
+        updateQuizStats();
+        setupQuiz();
+    }
+
+    // 实用函数
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
+
+    // 页面加载完成后初始化应用
+    document.addEventListener('DOMContentLoaded', init);
+</script>
+
+</body>
+</html>
